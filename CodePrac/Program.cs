@@ -29,21 +29,68 @@ namespace CodePrac
 
             // Write the solution in C# with appropriate input reading if you want, or use hardcoded data to test.
 
-            int[] GivenArray = new int[] {1,2,3,4,7,8,3};
-            int target = 9;
+            // int[] GivenArray = new int[] {1,2,3,4,7,8,3};
+            // int target = 9;
 
-            int[] Result = FindIndexes(GivenArray,target);
+            // int[] Result = FindIndexes(GivenArray,target);
 
-            foreach(var a in Result)
+            // foreach(var a in Result)
+            // {
+            //     System.Console.Write(a+ " ");
+            // }
+
+            //Implement a function to check if a given string is a palindrome. 
+            // A palindrome reads the same backward as forward.
+
+            // Example:
+            // Input: "racecar"
+            // Output: true
+
+            // Input: "hello"
+            // Output: false
+
+            // Write the solution in C# using basic string operations and loops (without
+            //  using built-in reverse functions).
+
+            System.Console.WriteLine("enter to check if palindrome : ");
+            string ?inpString = Console.ReadLine();
+
+            if (inpString == "")
             {
-                System.Console.Write(a+ " ");
+                System.Console.WriteLine("empty string");
+            }
+            else
+            {
+                bool res = checkPalindrome(inpString);
+                System.Console.WriteLine(res);
             }
 
 
 
         }
         // functions
+             
 
+             public static bool checkPalindrome(string inpString)
+        {
+            bool res;
+            string str1 = inpString.ToLower();
+            string str2 = ReverseString(str1);
+
+            if (str1 == str2)
+            {
+                res= true;
+            }
+            else
+            {
+                res = false;
+            }
+
+            
+          return res;
+
+
+        }
         public static int[] FindIndexes(int[] Garray, int target)
         {
             int[] result = new int[2];
@@ -66,24 +113,9 @@ namespace CodePrac
             return result;
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        public static char[] reverseString(string input, int length)
+        public static string ReverseString(string input)
         {
+            int length = input.Length;
             char[] rString = new char[length];
             int j = length - 1;
 
@@ -97,7 +129,7 @@ namespace CodePrac
 
 
 
-            return rString;
+            return new string(rString);
 
 
 
