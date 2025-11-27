@@ -84,18 +84,78 @@ namespace CodePrac
             // Do not use built-in sort methods; merge while maintaining order using loops and conditionals.
             // Try to implement this in C# using array manipulation.
 
-           int[] Arr1 = new int[] {1,3,4,5,7,8,9};
-           int[] Arr2 = new int[] {2,4,6,8,9,10};
+            //    int[] Arr1 = new int[] {1,3,4,5,7,8,9};
+            //    int[] Arr2 = new int[] {2,4,6,8,9,10};
 
-           int[] resArr = MergeTwoSortedArray(Arr1,Arr2);
+            //    int[] resArr = MergeTwoSortedArray(Arr1,Arr2);
 
-           foreach(var x in resArr)
+            //    foreach(var x in resArr)
+            //     {
+            //         System.Console.Write(x +" ");
+            //     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            // Write a function to remove duplicate integers from an unsorted array.
+            // Requirements:
+            // Input: an unsorted integer array
+            // Output: a new array containing only unique elements (no duplicates)
+            // No built-in functions for distinct or sets allowed
+            // Use loops and conditionals to implement
+
+
+
+            int[] Uarr = new int[] { 23,54,1,23,45,23,12,54,32,23,12,98};
+
+            List<int> resArr = RemoveDuplicates(Uarr);
+            foreach (var a in resArr)
             {
-                System.Console.Write(x +" ");
+                System.Console.Write(a+ " ");
             }
         }
         // functions
 
+        public static List<int> RemoveDuplicates(int[] uarr)
+        {
+            List<int> resarr = new List<int> {};
+            int len = uarr.Length;
+
+            for(int i = 0; i < len; i++)
+            {
+                bool foundmatch = false;
+                for(int j = 0; j < resarr.Count; j++)
+                {
+                    if (uarr[i] == resarr[j])
+                    {
+                        foundmatch =true;
+                        break;
+                    }
+                }
+
+                if (foundmatch == false)
+                {
+                    resarr.Add(uarr[i]);
+                }
+                
+            }
+
+
+
+
+
+            return resarr;
+        }
         public static int[] MergeTwoSortedArray(int[] arr1, int[] arr2)
         {
             int[] resarr = new int[arr1.Length + arr2.Length ];
