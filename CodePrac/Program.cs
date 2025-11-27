@@ -116,29 +116,88 @@ namespace CodePrac
 
 
 
-            int[] Uarr = new int[] { 23,54,1,23,45,23,12,54,32,23,12,98};
+            // int[] Uarr = new int[] { 23,54,1,23,45,23,12,54,32,23,12,98};
 
-            List<int> resArr = RemoveDuplicates(Uarr);
-            foreach (var a in resArr)
+            // List<int> resArr = RemoveDuplicates(Uarr);
+            // foreach (var a in resArr)
+            // {
+            //     System.Console.Write(a+ " ");
+            // }
+
+
+
+
+            //Find the first non-repeating character in a string.
+            // Requirements:
+            // Given a string, return the index of the first character that appears only once.
+            // If no such character exists, return -1.
+            // Use only basic loops and arrays (no built-in dictionaries or hashsets if possible).
+            // Example:
+            // Input: "leetcode"
+            // Output: 0 (because 'l' is the first non-repeating character)
+            // Input: "loveleetcode"
+            // Output: 2 (because 'v' is the first non-repeating character)
+            // Input: "aabb"
+            // Output: -1 (no non-repeating characters)
+
+            System.Console.WriteLine("enter a string : ");
+            string? Istring = Console.ReadLine();
+
+            if (string.IsNullOrEmpty(Istring))
             {
-                System.Console.Write(a+ " ");
+                System.Console.WriteLine("Invalid Input");
             }
+            else
+            {
+                int result = FindNonReapting(Istring);
+                System.Console.WriteLine(result);
+            }
+
+
+       
         }
         // functions
 
+        public static int FindNonReapting(string str)
+        {
+            int result = -1;
+
+            for(int i = 0; i < str.Length; i++)
+            {
+                bool copyfound = false;
+                for(int j = i+1; j < str.Length; j++)
+                {
+                    if (str[i] == str[j])
+                    {
+                        copyfound = true;
+                        break;
+                    }
+                    
+                }
+                if(copyfound == false)
+                {
+                    result = i;
+                    break;
+                }
+            }
+
+
+            return result;
+        }
+
         public static List<int> RemoveDuplicates(int[] uarr)
         {
-            List<int> resarr = new List<int> {};
+            List<int> resarr = new List<int> { };
             int len = uarr.Length;
 
-            for(int i = 0; i < len; i++)
+            for (int i = 0; i < len; i++)
             {
                 bool foundmatch = false;
-                for(int j = 0; j < resarr.Count; j++)
+                for (int j = 0; j < resarr.Count; j++)
                 {
                     if (uarr[i] == resarr[j])
                     {
-                        foundmatch =true;
+                        foundmatch = true;
                         break;
                     }
                 }
@@ -147,7 +206,7 @@ namespace CodePrac
                 {
                     resarr.Add(uarr[i]);
                 }
-                
+
             }
 
 
@@ -158,41 +217,41 @@ namespace CodePrac
         }
         public static int[] MergeTwoSortedArray(int[] arr1, int[] arr2)
         {
-            int[] resarr = new int[arr1.Length + arr2.Length ];
-            int i=0,j=0,k=0;
-            
-            while(i<arr1.Length && j < arr2.Length)
+            int[] resarr = new int[arr1.Length + arr2.Length];
+            int i = 0, j = 0, k = 0;
+
+            while (i < arr1.Length && j < arr2.Length)
             {
                 if (arr1[i] < arr2[j])
                 {
-                    resarr[k]=arr1[i];
+                    resarr[k] = arr1[i];
                     k++;
                     i++;
                 }
                 else
                 {
-                    resarr[k]=arr2[j];
+                    resarr[k] = arr2[j];
                     j++;
                     k++;
                 }
-                
+
             }
-           while (i < arr1.Length)
-                {
-                    resarr[k]=arr1[i];
-                    i++;
-                    k++;
-                }
-                 while (j < arr2.Length)
-                {
-                    resarr[k]=arr2[j];
-                    j++;
-                    k++;
-                }
+            while (i < arr1.Length)
+            {
+                resarr[k] = arr1[i];
+                i++;
+                k++;
+            }
+            while (j < arr2.Length)
+            {
+                resarr[k] = arr2[j];
+                j++;
+                k++;
+            }
             return resarr;
         }
 
-        
+
         public static void FindMaxandMin(int[] SArr)
         {
             int min = int.MaxValue;
