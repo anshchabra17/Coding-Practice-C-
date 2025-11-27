@@ -52,26 +52,53 @@ namespace CodePrac
             // Write the solution in C# using basic string operations and loops (without
             //  using built-in reverse functions).
 
-            System.Console.WriteLine("enter to check if palindrome : ");
-            string ?inpString = Console.ReadLine();
+            // System.Console.WriteLine("enter to check if palindrome : ");
+            // string ?inpString = Console.ReadLine();
 
-            if (inpString == "")
-            {
-                System.Console.WriteLine("empty string");
-            }
-            else
-            {
-                bool res = checkPalindrome(inpString);
-                System.Console.WriteLine(res);
-            }
+            // if (inpString == "")
+            // {
+            //     System.Console.WriteLine("empty string");
+            // }
+            // else
+            // {
+            //     bool res = checkPalindrome(inpString);
+            //     System.Console.WriteLine(res);
+            // }
 
+            //Write a method to find the maximum and minimum values in an integer array.
+            // Requirements:
+            // The method should accept an integer array as input.
+            // It should return both the maximum and minimum values found.
+            // Do not use built-in sorting or max/min functions.
+            // Example:
+            // Input:​
+            // Output: Max = 9, Min = 2
+            int[] SArr = new int[] {11,21,41,53,54,34,23,34,8};
 
-
+            FindMaxandMin(SArr);
         }
         // functions
              
+             public static void FindMaxandMin(int[] SArr)
+        {
+            int min = int.MaxValue;
+            int max = int.MinValue;
 
-             public static bool checkPalindrome(string inpString)
+            for(int i = 0; i < SArr.Length; i++)
+            {
+                if (SArr[i] < min)
+                {
+                    min=SArr[i];
+                }
+                if (SArr[i] > max)
+                {
+                    max=SArr[i];
+                }
+            }
+            System.Console.WriteLine($"Max : {max} Min : {min}");
+        }
+
+        public static bool checkPalindrome(string inpString)
         {
             bool res;
             string str1 = inpString.ToLower();
@@ -79,37 +106,37 @@ namespace CodePrac
 
             if (str1 == str2)
             {
-                res= true;
+                res = true;
             }
             else
             {
                 res = false;
             }
 
-            
-          return res;
+
+            return res;
 
 
         }
         public static int[] FindIndexes(int[] Garray, int target)
         {
             int[] result = new int[2];
-              
+
             int arraylen = Garray.Length;
 
-            for(int i = 0; i < arraylen; i++)
+            for (int i = 0; i < arraylen; i++)
             {
-                for(int j = 0; j < arraylen; j++)
+                for (int j = 0; j < arraylen; j++)
                 {
-                    if(Garray[i]+Garray[j] == target)
+                    if (Garray[i] + Garray[j] == target)
                     {
                         result[0] = i;
                         result[1] = j;
                     }
                 }
-            }  
-            
-            
+            }
+
+
             return result;
         }
 
