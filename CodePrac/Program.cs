@@ -73,26 +73,80 @@ namespace CodePrac
             // Example:
             // Input:​
             // Output: Max = 9, Min = 2
-            int[] SArr = new int[] {11,21,41,53,54,34,23,34,8};
+            // int[] SArr = new int[] {11,21,41,53,54,34,23,34,8};
 
-            FindMaxandMin(SArr);
+            // FindMaxandMin(SArr);
+
+            //Given two sorted integer arrays, write a function that merges them into one sorted array.
+            // Requirements:
+            // Input: two sorted arrays (e.g., and )
+            // Output: one sorted array containing elements from both inputs (e.g., )
+            // Do not use built-in sort methods; merge while maintaining order using loops and conditionals.
+            // Try to implement this in C# using array manipulation.
+
+           int[] Arr1 = new int[] {1,3,4,5,7,8,9};
+           int[] Arr2 = new int[] {2,4,6,8,9,10};
+
+           int[] resArr = MergeTwoSortedArray(Arr1,Arr2);
+
+           foreach(var x in resArr)
+            {
+                System.Console.Write(x +" ");
+            }
         }
         // functions
-             
-             public static void FindMaxandMin(int[] SArr)
+
+        public static int[] MergeTwoSortedArray(int[] arr1, int[] arr2)
+        {
+            int[] resarr = new int[arr1.Length + arr2.Length ];
+            int i=0,j=0,k=0;
+            
+            while(i<arr1.Length && j < arr2.Length)
+            {
+                if (arr1[i] < arr2[j])
+                {
+                    resarr[k]=arr1[i];
+                    k++;
+                    i++;
+                }
+                else
+                {
+                    resarr[k]=arr2[j];
+                    j++;
+                    k++;
+                }
+                
+            }
+           while (i < arr1.Length)
+                {
+                    resarr[k]=arr1[i];
+                    i++;
+                    k++;
+                }
+                 while (j < arr2.Length)
+                {
+                    resarr[k]=arr2[j];
+                    j++;
+                    k++;
+                }
+            return resarr;
+        }
+
+        
+        public static void FindMaxandMin(int[] SArr)
         {
             int min = int.MaxValue;
             int max = int.MinValue;
 
-            for(int i = 0; i < SArr.Length; i++)
+            for (int i = 0; i < SArr.Length; i++)
             {
                 if (SArr[i] < min)
                 {
-                    min=SArr[i];
+                    min = SArr[i];
                 }
                 if (SArr[i] > max)
                 {
-                    max=SArr[i];
+                    max = SArr[i];
                 }
             }
             System.Console.WriteLine($"Max : {max} Min : {min}");
