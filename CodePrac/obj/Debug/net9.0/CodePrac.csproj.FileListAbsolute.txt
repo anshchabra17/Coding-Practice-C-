@@ -1,0 +1,15 @@
+C:\Users\anshc\coding-practice-C#\codeprac\obj\Debug\net9.0\CodePrac.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\anshc\coding-practice-C#\codeprac\obj\Debug\net9.0\CodePrac.AssemblyInfoInputs.cache
+C:\Users\anshc\coding-practice-C#\codeprac\obj\Debug\net9.0\CodePrac.AssemblyInfo.cs
+C:\Users\anshc\coding-practice-C#\codeprac\obj\Debug\net9.0\CodePrac.csproj.CoreCompileInputs.cache
+C:\Users\anshc\coding-practice-C#\codeprac\obj\Debug\net9.0\CodePrac.sourcelink.json
+C:\Users\anshc\coding-practice-C#\codeprac\bin\Debug\net9.0\CodePrac.exe
+C:\Users\anshc\coding-practice-C#\codeprac\bin\Debug\net9.0\CodePrac.deps.json
+C:\Users\anshc\coding-practice-C#\codeprac\bin\Debug\net9.0\CodePrac.runtimeconfig.json
+C:\Users\anshc\coding-practice-C#\codeprac\bin\Debug\net9.0\CodePrac.dll
+C:\Users\anshc\coding-practice-C#\codeprac\bin\Debug\net9.0\CodePrac.pdb
+C:\Users\anshc\coding-practice-C#\codeprac\obj\Debug\net9.0\CodePrac.dll
+C:\Users\anshc\coding-practice-C#\codeprac\obj\Debug\net9.0\refint\CodePrac.dll
+C:\Users\anshc\coding-practice-C#\codeprac\obj\Debug\net9.0\CodePrac.pdb
+C:\Users\anshc\coding-practice-C#\codeprac\obj\Debug\net9.0\CodePrac.genruntimeconfig.cache
+C:\Users\anshc\coding-practice-C#\codeprac\obj\Debug\net9.0\ref\CodePrac.dll
