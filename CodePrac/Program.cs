@@ -140,50 +140,95 @@ namespace CodePrac
             // Input: "aabb"
             // Output: -1 (no non-repeating characters)
 
-            System.Console.WriteLine("enter a string : ");
-            string? Istring = Console.ReadLine();
+            //     System.Console.WriteLine("enter a string : ");
+            //     string? Istring = Console.ReadLine();
 
-            if (string.IsNullOrEmpty(Istring))
-            {
-                System.Console.WriteLine("Invalid Input");
-            }
-            else
-            {
-                int result = FindNonReapting(Istring);
-                System.Console.WriteLine(result);
-            }
+            //     if (string.IsNullOrEmpty(Istring))
+            //     {
+            //         System.Console.WriteLine("Invalid Input");
+            //     }
+            //     else
+            //     {
+            //         int result = FindNonReapting(Istring);
+            //         System.Console.WriteLine(result);
+            //     }
 
 
-       
+
+            // }
+            // // functions
+
+            // public static int FindNonReapting(string str)
+            // {
+            //     int result = -1;
+
+            //     for(int i = 0; i < str.Length; i++)
+            //     {
+            //         bool copyfound = false;
+            //         for(int j = i+1; j < str.Length; j++)
+            //         {
+            //             if (str[i] == str[j])
+            //             {
+            //                 copyfound = true;
+            //                 break;
+            //             }
+
+            //         }
+            //         if(copyfound == false)
+            //         {
+            //             result = i;
+            //             break;
+            //         }
+            //     }
+
+
+            //     return result;
+
+
+
+
+
+
+
+            //         Question 8: Check if one string is a rotation of another.
+            // Requirements:
+            // Given two strings s1 and s2, check if s2 is a rotation of s1.
+            // Example: s1 = "abcd", s2 = "cdab" → true, because s2 is s1 rotated by 2 positions.
+            // Example: s1 = "abcd", s2 = "acbd" → false.
+            // Hint:
+            // A classic approach is to check if s2 is a substring of s1 concatenated with itself (s1 + s1).
+               
+               string str1 = "abcd";
+               string str2="bcda";
+
+               bool res = checkrotation(str1,str2);
+
+               System.Console.WriteLine(res);
         }
-        // functions
+        
 
-        public static int FindNonReapting(string str)
+        public static bool checkrotation(string str1, string str2)
         {
-            int result = -1;
+            bool res;
 
-            for(int i = 0; i < str.Length; i++)
+            string concatedstrings = str1 + str2 ;
+
+            if (concatedstrings.Contains(str1))
             {
-                bool copyfound = false;
-                for(int j = i+1; j < str.Length; j++)
-                {
-                    if (str[i] == str[j])
-                    {
-                        copyfound = true;
-                        break;
-                    }
-                    
-                }
-                if(copyfound == false)
-                {
-                    result = i;
-                    break;
-                }
+                res = true;
             }
+            else res = false;
 
 
-            return result;
+
+            return res ;
         }
+
+
+
+
+
+
 
         public static List<int> RemoveDuplicates(int[] uarr)
         {
