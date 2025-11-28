@@ -236,47 +236,140 @@ namespace CodePrac
             // Test 2: n=4, array=[1,3,4,2] → Output: 0  
             // Test 3: n=3, array=[2,1,3] → Output: 0
 
-        
-        //     System.Console.WriteLine("enter the value of n ");
-        //     int n = Convert.ToInt32(Console.ReadLine());
-        //     int ArraySize = n-1;
-        //     System.Console.WriteLine("enter array items : ");
 
-        //     int[] arr = new int[ArraySize];
-        //     for(int i = 0; i < ArraySize; i++)
-        //     {
-        //         arr[i] = Convert.ToInt32(Console.ReadLine());
-        //     }
+            //     System.Console.WriteLine("enter the value of n ");
+            //     int n = Convert.ToInt32(Console.ReadLine());
+            //     int ArraySize = n-1;
+            //     System.Console.WriteLine("enter array items : ");
 
-            
- 
-        //     int result = FindMissingNumber(arr,n);
-        //     System.Console.WriteLine(result);
-            
-        // }
-        //    public static int FindMissingNumber(int[] arr, int n)
-        // {
-        //     int result;
-            
-        //     int sumofarr =0;
-
-        //     foreach(var x in arr)
-        //     {
-        //         sumofarr = sumofarr +x;
-        //     }
-        //     int sumtilln = (n*(n+1))/2;
-        //     result = sumtilln - sumofarr;
-              
-            
-              
-            
+            //     int[] arr = new int[ArraySize];
+            //     for(int i = 0; i < ArraySize; i++)
+            //     {
+            //         arr[i] = Convert.ToInt32(Console.ReadLine());
+            //     }
 
 
-        //     return result;
-        
+
+            //     int result = FindMissingNumber(arr,n);
+            //     System.Console.WriteLine(result);
+
+            // }
+            //    public static int FindMissingNumber(int[] arr, int n)
+            // {
+            //     int result;
+
+            //     int sumofarr =0;
+
+            //     foreach(var x in arr)
+            //     {
+            //         sumofarr = sumofarr +x;
+            //     }
+            //     int sumtilln = (n*(n+1))/2;
+            //     result = sumtilln - sumofarr;
+
+
+
+
+
+
+            //     return result;
+
+
+
+
+            // Question 2: Second Largest Number
+            // Problem: Find the second largest number in an array of integers. Return -1 if no second largest
+            //  exists (all elements same).
+
+            // Input: Array of integers (hardcoded test cases)
+
+            // Test Cases:
+
+            // text
+            // Test 1: [3,5,2,8,7,1] → 7
+            // Test 2: [10,10,10] → -1 
+            // Test 3: [1,2,3] → 2
+            // Test 4: [5] → -1
+            // Implement in C# using hardcoded arrays for testing:
+
+            //     int[] test1 = {3,5,2,8,7,1};
+            //    // int[] test1 = {10,10,10};
+            //     int result1 = FindSecondLargest(test1);
+            //     Console.WriteLine(result1); // Should print 7
+            // }
+            //         Question 3: Unique Characters
+            // Problem: Check if a string contains only unique characters (no duplicates).
+
+            // Input: String (hardcoded test cases)
+
+            // Test Cases:
+
+            // text
+            // Test 1: "abcde" → true
+            // Test 2: "hello" → false
+            // Test 3: "a" → true
+            // Test 4: "" → true
+            // Implement in C# using hardcoded test cases:
+
+            // csharp
+            // // Test your function
+            // string[] tests = {"abcde", "hello", "a", ""};
+            // foreach(string test in tests)
+            // {
+            //     bool result = HasUniqueCharacters(test);
+            //     Console.WriteLine($"{test} → {result}");
         }
- 
 
+        public static int FindSecondLargest(int[] arr)
+        {
+            int max = int.MinValue;
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] > max)
+                {
+                    max = arr[i];
+                }
+            }
+
+            int smax = int.MinValue;
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (max == arr[i])
+                {
+                    continue;
+                }
+                if (arr[i] > smax)
+                {
+                    smax = arr[i];
+                }
+
+            }
+
+            if (max == smax)
+            {
+                return -1;
+            }
+
+
+            return smax;
+        }
+
+        //   public static int FindSecondLargest(int[] arr)
+        // {
+        //     int smax;
+
+        //     Array.Sort(arr);
+        //     smax = arr[arr.Length -2];
+
+        //     if (arr[arr.Length - 1] == smax)
+        //     {
+        //         return -1;
+        //     }
+
+        //     return smax;
+        // }
 
         public static bool checkrotation(string str1, string str2)
         {
