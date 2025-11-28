@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.IO.Pipelines;
 
 namespace CodePrac
@@ -197,21 +198,91 @@ namespace CodePrac
             // Example: s1 = "abcd", s2 = "acbd" → false.
             // Hint:
             // A classic approach is to check if s2 is a substring of s1 concatenated with itself (s1 + s1).
-               
-               string str1 = "abcd";
-               string str2="bcda";
 
-               bool res = checkrotation(str1,str2);
+            //    string str1 = "abcd";
+            //    string str2="bcda";
 
-               System.Console.WriteLine(res);
-        }
+            //    bool res = checkrotation(str1,str2);
+
+            //    System.Console.WriteLine(res);
+
+            //Reverse words in a sentence while maintaining word order.
+            // Requirements:
+            // Given a sentence, reverse each word individually but keep the original word order.
+            // Do not use built-in reverse functions for individual words.
+            // Use loops and string manipulation.
+            // Example:
+            // Input: "Hello World Java"
+            // Output: "olleH dlroW avaJ"
+            // Example:
+            // Input: "I love coding"
+            // Output: "I evol gnidoc"
+
+            //    System.Console.WriteLine("enter a string : ");
+            //    string? Istring = Console.ReadLine();
+
+
+
+
+
+
+            //Question 1: Missing Number
+            // Problem: Array contains numbers 1 to n (one missing). Find the missing number.
+            // Input: Array of integers + size n
+            // Test Cases:
+
+            // text
+            // Test 1: n=6, array=[1,2,4,5,6] → Output: 3
+            // Test 2: n=4, array=[1,3,4,2] → Output: 0  
+            // Test 3: n=3, array=[2,1,3] → Output: 0
+
         
+        //     System.Console.WriteLine("enter the value of n ");
+        //     int n = Convert.ToInt32(Console.ReadLine());
+        //     int ArraySize = n-1;
+        //     System.Console.WriteLine("enter array items : ");
+
+        //     int[] arr = new int[ArraySize];
+        //     for(int i = 0; i < ArraySize; i++)
+        //     {
+        //         arr[i] = Convert.ToInt32(Console.ReadLine());
+        //     }
+
+            
+ 
+        //     int result = FindMissingNumber(arr,n);
+        //     System.Console.WriteLine(result);
+            
+        // }
+        //    public static int FindMissingNumber(int[] arr, int n)
+        // {
+        //     int result;
+            
+        //     int sumofarr =0;
+
+        //     foreach(var x in arr)
+        //     {
+        //         sumofarr = sumofarr +x;
+        //     }
+        //     int sumtilln = (n*(n+1))/2;
+        //     result = sumtilln - sumofarr;
+              
+            
+              
+            
+
+
+        //     return result;
+        
+        }
+ 
+
 
         public static bool checkrotation(string str1, string str2)
         {
             bool res;
 
-            string concatedstrings = str1 + str2 ;
+            string concatedstrings = str1 + str2;
 
             if (concatedstrings.Contains(str1))
             {
@@ -221,7 +292,7 @@ namespace CodePrac
 
 
 
-            return res ;
+            return res;
         }
 
 
