@@ -297,29 +297,47 @@ namespace CodePrac
             //     int result1 = FindSecondLargest(test1);
             //     Console.WriteLine(result1); // Should print 7
             // }
+
+
+
             //         Question 3: Unique Characters
             // Problem: Check if a string contains only unique characters (no duplicates).
-
             // Input: String (hardcoded test cases)
-
             // Test Cases:
-
             // text
             // Test 1: "abcde" → true
             // Test 2: "hello" → false
             // Test 3: "a" → true
             // Test 4: "" → true
             // Implement in C# using hardcoded test cases:
-
             // csharp
             // // Test your function
-            // string[] tests = {"abcde", "hello", "a", ""};
-            // foreach(string test in tests)
-            // {
-            //     bool result = HasUniqueCharacters(test);
-            //     Console.WriteLine($"{test} → {result}");
+            string[] tests = {"abcde", "hello", "a", ""};
+            foreach(string test in tests)
+            {
+                bool result = HasUniqueCharacters(test);
+                Console.WriteLine($"{test} → {result}");
+        }
         }
 
+         public static bool HasUniqueCharacters(string str)
+        {
+
+            for(int i = 0; i < str.Length; i++)
+            {
+                for(int j = 1; j < str.Length; j++)
+                {
+                    if(i!=j && str[i] == str[j])
+                    {
+                        return false;
+                    }
+                }
+            }
+            
+
+            return true;
+        }
+         
         public static int FindSecondLargest(int[] arr)
         {
             int max = int.MinValue;
